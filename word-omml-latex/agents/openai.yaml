@@ -1,0 +1,4 @@
+interface:
+  display_name: "Word OMML LaTeX"
+  short_description: "Convert Word OMML equations to and from LaTeX."
+  default_prompt: "Use $word-omml-latex to convert equations between Word OMML and LaTeX."
