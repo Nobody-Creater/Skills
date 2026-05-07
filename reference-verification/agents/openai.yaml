@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Verification"
+  short_description: "Check citation support and normalize reference formatting."
+  default_prompt: "Use $reference-verification to verify in-text citation support and fix the reference list format for this paper."
