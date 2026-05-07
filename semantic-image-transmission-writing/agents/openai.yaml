@@ -1,4 +1,4 @@
 interface:
   display_name: "Semantic Image Writing"
-  short_description: "Paper patterns for semantic image links"
-  default_prompt: "Use $semantic-image-transmission-writing to plan or revise my semantic image transmission paper."
+  short_description: "IEEE semantic image writing and audits"
+  default_prompt: "Use $semantic-image-transmission-writing to plan, revise, or audit my semantic image transmission paper."

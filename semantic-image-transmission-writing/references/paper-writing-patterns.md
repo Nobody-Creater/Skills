@@ -25,6 +25,8 @@ The strongest papers use a repeated logic:
 4. **Tie the variable to channel resources**: bandwidth, power, channel symbols, feedback rounds, latent dimensions, or loss weights.
 5. **Validate across regimes**: SNR curves, bandwidth curves, channel mismatch, image complexity, visual examples, and ablations.
 
+Add a consistency rule when imitating these papers: the bottleneck named in the introduction must be the same variable stressed in experiments. DeepJSCC-style writing is persuasive because the cliff effect is visible in SNR curves; ADJSCC-style writing is persuasive because train-test SNR mismatch is visible in adaptation tests; task-oriented semantic writing is persuasive only when the task or semantic variable is measured directly.
+
 ## Introduction Template
 
 Use this structure for the first 5 to 7 paragraphs:
@@ -154,3 +156,4 @@ When asked to update the literature base:
 - They name baselines carefully and compare at equal channel uses or equal bandwidth.
 - They combine image quality metrics with visual examples and task/semantic metrics.
 - They make the method name, gap, module, ablation, and claim align tightly.
+- They keep terminology and assumptions stable: the same method name, semantic variable, channel setting, and objective reappear from abstract to conclusion.

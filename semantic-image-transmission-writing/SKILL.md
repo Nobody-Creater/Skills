@@ -1,6 +1,6 @@
 ---
 name: semantic-image-transmission-writing
-description: Use when Codex needs to plan, draft, revise, or review an IEEE-style paper, thesis section, rebuttal, outline, or literature review about semantic communication, DeepJSCC, task-oriented communication, or wireless image transmission. Helps turn classic high-citation papers into reusable writing logic for abstracts, introductions, related work, methods, experiments, and contribution framing.
+description: Use when Codex needs to plan, draft, revise, or review an IEEE-style paper, thesis section, rebuttal, outline, or literature review about semantic communication, DeepJSCC, task-oriented communication, or wireless image transmission. Helps turn classic high-citation papers into reusable writing logic for abstracts, introductions, related work, methods, experiments, contribution framing, and whole-paper consistency audits for terminology, methods, formulas, claims, and reviewer-facing logic.
 ---
 
 # Semantic Image Transmission Writing
@@ -9,7 +9,7 @@ description: Use when Codex needs to plan, draft, revise, or review an IEEE-styl
 
 Use this skill to write or revise papers on semantic communication for image transmission. Treat it as a writing architecture guide, not a technical tutorial.
 
-If the user asks for a literature-grounded draft, first read `references/paper-writing-patterns.md` for the source map and paper-specific writing moves. If the user only asks for section polishing, use the workflow below directly.
+If the user asks for a literature-grounded draft, first read `references/paper-writing-patterns.md` for the source map and paper-specific writing moves. If the user asks for whole-paper revision, logical tightening, consistency checking, rebuttal preparation, or reviewer-resistant writing, also read `references/context-consistency-checks.md`. If the user only asks for section polishing, use the workflow below directly.
 
 ## Core Writing Logic
 
@@ -20,6 +20,8 @@ Build the paper around a three-layer story:
 3. **System evidence**: the proposed model must prove robustness through channel sweeps, bandwidth sweeps, baselines, ablations, visual examples, and semantic or task metrics.
 
 Avoid writing semantic communication as a slogan. Define exactly what "semantic" means in the paper: saliency map, task label, segmentation, scene graph, caption, latent feature, hyperprior, receiver-side knowledge, human preference, or downstream task accuracy.
+
+Maintain a paper ledger whenever revising more than one section. Track the method name, acronym, semantic variable, system assumptions, symbols, formulas, losses, claimed innovations, validation settings, and baselines. Every major claim should trace to one method component and one experiment, ablation, or theoretical argument.
 
 ## Paper Structure
 
@@ -126,6 +128,17 @@ Use tables for broad numeric comparisons and figures for channel curves. Always 
 - **Task-aware metrics**: semantic papers are stronger when they evaluate task utility or semantic fidelity in addition to PSNR.
 - **Engineering realism**: claims become credible when the paper includes channel mismatch, rate adaptation, computational cost, and comparisons against practical codecs.
 
+## Context Consistency Pass
+
+Run this pass before finalizing any full draft, multi-section revision, rebuttal, or contribution rewrite. Use `references/context-consistency-checks.md` for the detailed workflow.
+
+1. **Terminology ledger**: keep one canonical name for the method, modules, semantic variable, channel model, datasets, losses, and metrics. Expand each acronym once, then use it consistently.
+2. **Formula ledger**: verify every symbol is defined before use, has stable meaning across sections, and matches tensor dimensions, constraints, and loss terms.
+3. **Claim trace**: map each abstract sentence and contribution bullet to a method mechanism and a validation result. Remove or soften claims without evidence.
+4. **Innovation alignment**: ensure the stated gap, proposed module, equation, ablation, and experimental conclusion all point to the same missing variable.
+5. **Reviewer stress test**: ask whether a skeptical reviewer could challenge novelty, fairness of baselines, semantic definition, channel assumptions, complexity, or metric choice. Add a precise sentence, experiment, or limitation where the draft is vulnerable.
+6. **Cross-section continuity**: check that the introduction promises only what the method and experiments actually deliver; check that the conclusion does not introduce new claims.
+
 ## Revision Checklist
 
 Before finalizing a section, verify:
@@ -136,6 +149,9 @@ Before finalizing a section, verify:
 - The related work categories match the experimental baselines.
 - The system model defines channel, bandwidth ratio, SNR, and objective before architecture details.
 - Every module has a reason tied to the communication problem.
+- The method name, acronym, module names, and semantic variable are identical across title, abstract, introduction, method, experiments, and conclusion.
+- Each equation symbol is defined once, reused consistently, and connected to surrounding prose.
+- Each claimed innovation has a visible route from gap to mechanism to ablation or evidence.
 - Experiments include SNR or bandwidth sweeps, ablations, and at least one semantic/task metric when claiming semantic communication.
 - Visual examples demonstrate semantic benefit under difficult channel conditions.
 
@@ -144,6 +160,10 @@ Before finalizing a section, verify:
 - Calling a method "semantic" while optimizing only MSE or PSNR with no semantic definition.
 - Writing related work as a chronological list instead of a gap map.
 - Introducing large neural modules without explaining the communication constraint they solve.
+- Renaming the same method, module, semantic variable, or loss across sections.
+- Using a symbol with different meanings in the system model, objective, and algorithm.
+- Claiming an innovation in the introduction that has no ablation, baseline, or stress test.
+- Letting the conclusion overstate results beyond the datasets, channels, SNR range, or tasks actually evaluated.
 - Comparing only with weak baselines such as uncoded JPEG.
 - Claiming robustness from one SNR point.
 - Reporting visual quality without task or semantic fidelity when the title promises task-oriented communication.
@@ -155,3 +175,9 @@ Read `references/paper-writing-patterns.md` when you need:
 - Paper-specific examples from DeepJSCC, DeepJSCC-f, ADJSCC, adaptive rate control, NTSCC, receiver-leading semantic systems, personalized saliency, and JSAC semantic communication surveys.
 - A compact list of classic papers and URLs to re-check current citation counts or publication metadata.
 - More detailed writing templates for introductions, contributions, method paragraphs, and experiments.
+
+Read `references/context-consistency-checks.md` when you need:
+
+- A whole-paper context audit for terms, formulas, claims, contributions, experiments, and reviewer-facing logic.
+- A ledger template for keeping method names, symbols, losses, baselines, and evidence consistent.
+- Adversarial reviewer questions to identify weak logic before submission or rebuttal.
